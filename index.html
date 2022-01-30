@@ -1,9 +1,65 @@
-<?php 
-    #PHP INCLUDES
-    include "connect.php";
-    include "Includes/templates/header.php";
-    include "Includes/templates/navbar.php";
-?>
+<!DOCTYPE html>
+<html lang="en">
+
+	<!-- HEAD -->
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
+		<meta name="description" content="YahYa Car Rental">
+		<meta name="author" content="JAIRI IDRISS">
+		<title>Car-Link</title>
+
+		<!-- EXTERNAL STYLE LINKS -->
+
+		<link rel="stylesheet" type="text/css" href="Design/css/bootstrap/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="Design/fonts/css/all.min.css">
+		<link rel="stylesheet" type="text/css" href="Design/css/main-style.css">
+		<link rel="stylesheet" type="text/css" href="Design/css/responsive.css">
+
+		<!-- GOOGLE FONTS -->
+
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap" rel="stylesheet">
+	</head>
+
+	<!-- BODY -->
+
+	<body>
+
+<!-- START NAVBAR SECTION -->
+<header  id="header" class="nav-header">
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class = "container">
+            <a class="navbar-brand" href="#">
+                Car<span style = "color:#04DBC0">Link</span>&nbsp;Leasing
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#yahyaNavbar" aria-controls="yahyaNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="yahyaNavbar">
+                <ul class="navbar-nav" style = "margin-left: auto!important;">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="./">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./#brands">Brands</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./#reserve">Reserve</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./#contact-us">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
 
 <!-- Home Section -->
 <section class = "home_section">
@@ -128,8 +184,8 @@
             </div>
             <div class = "col-md-6 right-area" style = "padding:50px">
                 <h1>
-                    Globally Connected <br>
-                    by Large Network
+                    About <br>
+                    Car Link
                 </h1>
                 <p>
                     <span>
@@ -137,8 +193,17 @@
                     </span>
                 </p>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    Ut enim ad minim. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.
+                   Car Link is an African success story. Our guiding principles, and humble beginning, 
+                    revolve around personal honesty and integrity. We believe in strengthening our communities one neighborhood at a time,
+                     serving our customers as if they were our family, and rewarding hard work. These things are as true today as they were 
+                     when we were founded in 2019.
+
+                    Today, our massive network means Enterprise is the largest transportation solutions provider. We offer car and truck leaing.
+                     We're there when you need us with over 8,000 locations country wide.
+                    
+                    We take an active role in sustainability, not only because it’s smart for our business, 
+                    but because we believe in making the world a better place for future generations. Because of our size, 
+                    we are in a unique position to foster innovation, advance research and test market-driven solutions.
                 </p>
                 <a class="my-btn bttn" href="#">get details</a>
             </div>
@@ -158,7 +223,7 @@
                 We offer professional car rental & limousine services in our range of high-end vehicles
             </div>
         </div>
-        <div class = "car-brands">
+        <!-- <div class = "car-brands">
             <div class = "row">
             <?php
 
@@ -184,7 +249,7 @@
 
             ?>
             </div>
-        </div>
+        </div> -->
     </div>
 </section>
 
@@ -217,14 +282,14 @@
 						</div>
 						<div class = "form-group">
 							<label for="pickup_date">Pickup Date</label>
-							<input type = "date" min = "<?php echo date('Y-m-d', strtotime("+1 day"))?>" name = "pickup_date" class = "form-control" v-model = 'pickup_date'>
+							<input type = "date" min = "" name = "pickup_date" class = "form-control" v-model = 'pickup_date'>
 							<div class="invalid-feedback" style = "display:block" v-if="pickup_date === null">
 								Pickup date is required
 							</div>
 						</div>
 						<div class = "form-group">
 							<label for="return_date">Return Date</label>
-							<input type = "date" min = "<?php echo date('Y-m-d', strtotime("+2 day"))?>" name = "return_date"  class = "form-control" v-model = 'return_date'>
+							<input type = "date" min = "" name = "return_date"  class = "form-control" v-model = 'return_date'>
 							<div class="invalid-feedback" style = "display:block" v-if="return_date === null">
 								Return date is required
 							</div>
@@ -241,51 +306,44 @@
 
 
 <!-- BOTTOM FOOTER -->
-<?php include "Includes/templates/footer.php"; ?>
+		<!-- Footer Bottom Section -->
+		<footer class="footer_section">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="copyright">
+							Car-Link ©
+							<script type="text/javascript"> 
+								document.write(new Date().getFullYear())
+							</script>
+							All rights reserved 
+						</div>
+					</div>
+					<div class="col-md-6">
+						<ul class="footer_link">
+							<li><a href="#">About</a></li>
+							<li><a href="#">Terms</a></li>
+							<li><a href="#">Privacy</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<!-- INCLUDE JS SCRIPTS -->
+		<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+		<script src="Design/js/jquery.min.js"></script>
+		<script src="Design/js/bootstrap-js/bootstrap.min.js"></script>
+		<script src="Design/js/bootstrap-js/bootstrap.bundle.min.js"></script>
+		<script src="Design/js/main-script.js"></script>
+
+	</body>
+
+	<!-- END BODY TAG -->
+
+</html>
+
+<!-- END HTML TAG -->
 
 
 
-<script>
-
-new Vue({
-    el: "#reservation_form",
-    data: {
-        pickup_location: '',
-        return_location: '',
-        pickup_date: '',
-		return_date: ''
-    },
-    methods:{
-        checkForm: function(event){
-            if( this.pickup_location && this.return_location && this.pickup_date && this.return_date)
-            {
-                return true;
-            }
-            
-            if (!this.pickup_location)
-            {
-                this.pickup_location = null;
-            }
-
-            if (!this.return_location)
-            {
-                this.return_location = null;
-            }
-
-            if (!this.pickup_date)
-            {
-                this.pickup_date = null;
-            }
-
-			if (!this.return_date)
-            {
-                this.return_date = null;
-            }
-            
-            event.preventDefault();
-        },
-    }
-})
-
-
-</script>
