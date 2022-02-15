@@ -3,7 +3,7 @@
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class = "container">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="/Car--Link">
                 Car<span style = "color:#04DBC0">Link</span>&nbsp;Leasing
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#yahyaNavbar" aria-controls="yahyaNavbar" aria-expanded="false" aria-label="Toggle navigation">

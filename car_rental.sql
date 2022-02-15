@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Apr 29, 2021 at 12:14 AM
--- Server version: 10.4.17-MariaDB
--- PHP Version: 8.0.0
+-- Host: localhost
+-- Generation Time: Feb 15, 2022 at 10:47 AM
+-- Server version: 10.1.38-MariaDB
+-- PHP Version: 7.1.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -69,8 +70,7 @@ INSERT INTO `car_brands` (`brand_id`, `brand_name`, `brand_image`) VALUES
 (3, 'Lexus', '2016-Lexus-RX-350-BM-01.jpg'),
 (4, 'Mercedes Benz', 'Mercedes-C-Class-Estate-1.jpg'),
 (5, 'MINI', '2016-MINI-Cooper-S-Clubman-ALL4.jpg'),
-(6, 'Porsche', 'P14_0596_a4_rgb-1.jpg'),
-(10, 'jkljkllkj;', '15182_memory-game-screenshot.PNG');
+(6, 'Porsche', 'P14_0596_a4_rgb-1.jpg');
 
 -- --------------------------------------------------------
 
@@ -111,10 +111,8 @@ CREATE TABLE `clients` (
 --
 
 INSERT INTO `clients` (`client_id`, `full_name`, `client_email`, `client_phone`) VALUES
-(1, 'Idriss Jairi', 'driss52717jiri@gmail.com', '06345344232'),
-(2, 'Ahmed Oumenssour', 'ahmed_oum@gmail.com', '064534343'),
-(3, 'Chris', 'asdas@asfds.sdf', '18508232544'),
-(4, 'Bart', 'sdfsd@sfs.gh', '18508232533');
+(8, 'Salaro', 'salido@gmail.com', '08435342543'),
+(9, 'Salaro', 'salido@gmail.com', '08435342543');
 
 -- --------------------------------------------------------
 
@@ -130,7 +128,7 @@ CREATE TABLE `reservations` (
   `return_date` date NOT NULL,
   `pickup_location` varchar(50) NOT NULL,
   `return_location` varchar(50) NOT NULL,
-  `canceled` tinyint(1) NOT NULL DEFAULT 0,
+  `canceled` tinyint(1) NOT NULL DEFAULT '0',
   `cancellation_reason` varchar(250) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -139,10 +137,8 @@ CREATE TABLE `reservations` (
 --
 
 INSERT INTO `reservations` (`reservation_id`, `client_id`, `car_id`, `pickup_date`, `return_date`, `pickup_location`, `return_location`, `canceled`, `cancellation_reason`) VALUES
-(1, 1, 1, '2021-05-11', '2021-05-17', 'Agadir', 'Agadir', 0, NULL),
-(2, 2, 3, '2021-04-30', '2021-05-06', 'Agadir', 'Agadir', 0, NULL),
-(3, 3, 4, '2021-04-30', '2021-05-06', 'Agadir', 'Agadir', 1, 'Changed my mind! Sorry'),
-(4, 4, 4, '2021-04-29', '2021-05-02', 'Casablanca', 'Agadir', 0, NULL);
+(7, 8, 1, '2022-02-10', '2022-02-24', 'Torts', 'Roysa', 0, NULL),
+(8, 9, 1, '2022-02-10', '2022-02-24', 'Torts', 'Roysa', 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -156,7 +152,7 @@ CREATE TABLE `users` (
   `user_email` varchar(50) NOT NULL,
   `full_name` varchar(50) NOT NULL,
   `password` varchar(100) NOT NULL,
-  `group_id` tinyint(1) NOT NULL DEFAULT 1
+  `group_id` tinyint(1) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -164,7 +160,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `username`, `user_email`, `full_name`, `password`, `group_id`) VALUES
-(1, 'jairiidriss', 'test_test@gmail.com', 'Idriss Jairi', 'f7c3bc1d808e04732adf679965ccc34ca7ae3441', 0);
+(1, 'diana', 'diana@gmail.com', 'Diana Mutai', 'f7c3bc1d808e04732adf679965ccc34ca7ae3441', 0);
 
 --
 -- Indexes for dumped tables
@@ -220,7 +216,7 @@ ALTER TABLE `cars`
 -- AUTO_INCREMENT for table `car_brands`
 --
 ALTER TABLE `car_brands`
-  MODIFY `brand_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `brand_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `car_types`
@@ -232,13 +228,13 @@ ALTER TABLE `car_types`
 -- AUTO_INCREMENT for table `clients`
 --
 ALTER TABLE `clients`
-  MODIFY `client_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `client_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `reservations`
 --
 ALTER TABLE `reservations`
-  MODIFY `reservation_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `reservation_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `users`
